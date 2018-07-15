@@ -1,6 +1,6 @@
 module.exports = [
   {
-    judul: 'Petugas',
+    judul: 'Pemesanan',
     menus: [
       {
         judul: 'Lihat Pemesanan',
