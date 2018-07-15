@@ -23,6 +23,7 @@ input[type=text],
 input[type=password],
 input[type=date],
 input[type=time],
+input[type=number],
 select {
   background-color: white;
   border: 1px solid #00000080;

@@ -1,0 +1,44 @@
+<% include ../templates/header %>
+
+<article style="padding:24px;">
+  <form>
+    <input type="hidden" id="jadwal" value="<%= jadwal %>">
+    <input type="hidden" id="harga" value="<%= hargaTiket %>">
+
+    <div class="form-group">
+      <label for="nama_pemesan">Nama Pemesan</label>
+      <input type="text" name="nama_pemesan" id="nama_pemesan" placeholder="John Doe">
+    </div>
+
+    <div class="form-group">
+      <label for="notelp">No Telepon</label>
+      <input type="text" name="notelp" id="notelp" placeholder="089767621233">
+    </div>
+
+    <div class="form-group">
+      <label for="tanggal">Tanggal</label>
+      <input type="date" name="tanggal" id="tanggal" placeholder="Bandara Internasional Jawa Barat">
+    </div>
+
+    <div class="form-group">
+      <label for="jumlah">Jumlah Tiket</label>
+      <input type="number" name="jumlah" id="jumlah" placeholder="0" min=1 max=7>
+    </div>
+
+    <div id="nama-penumpang-group" class="form-group flex column">
+    </div>
+
+    <div class="form-group">
+      <button class="btn accent-color" id="simpan">Simpan</button>
+    </div>
+  </form>
+</article>
+</section>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/pemesanan/tambah2.js"></script>
+</main>
+</body>
+
+</html>

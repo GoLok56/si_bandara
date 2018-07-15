@@ -284,5 +284,40 @@ module.exports = {
     res.send({
       status: 200
     })
+  },
+
+  async findByBandara(req, res) {
+    let jadwals
+    try {
+      jadwals = await Jadwal.findAll({
+        where: {
+          kode_bandara_asal: req.params.bandaraAsal,
+          kode_bandara_tujuan: req.params.bandaraTujuan
+        },
+        include: [{ all: true, required: true }]
+      })
+    } catch (err) {
+      console.log(err)
+      return
+    }
+
+    res.send(jadwals)
+  },
+
+  async findJadwalById(req, res) {
+    let jadwal
+    try {
+      jadwal = await Jadwal.findOne({
+        where: {
+          id_jadwal: req.params.id
+        },
+        include: [{ all: true, required: true }]
+      })
+    } catch (err) {
+      console.log(err)
+      return
+    }
+
+    res.send(jadwal)
   }
 }

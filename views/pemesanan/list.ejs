@@ -1,0 +1,48 @@
+<% include ../templates/header %>
+<style>
+  .data tr th, .data tr td {
+    display: flex;
+    flex-basis: 130px;
+    min-width: 130px;
+  }
+</style>
+
+<article>
+  <% if (pemesanans.length > 0) { %>
+    <table class="data">
+      <tr class="data-header">
+        <th>Pemesan</th>
+        <th>No Telepon</th>
+        <th>Tanggal</th>
+        <th>Tanggal Pesan</th>
+        <th>Jumlah</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th>Aksi</th>
+      </tr>
+
+      <% for (let pemesanan of pemesanans) { %>
+      <tr class="data-body">
+        <td><%= pemesanan.nama_pemesan %></td>
+        <td><%= pemesanan.no_telepon %></td>
+        <td><%= pemesanan.tanggal_keberangkatan %></td>
+        <td><%= pemesanan.tanggal_pemesanan %></td>
+        <td><%= pemesanan.jumlah_tiket %></td>
+        <td><%= pemesanan.harga_total %></td>
+        <td><%= pemesanan.status_refund === 0 ? 'Tidak Refund' : 'Refund' %></td>
+        <td><a href="/pemesanan/reschedule/<%= pemesanan.id_pemesanan %>" class="btn btn-data accent-color">Atur Jadwal</a></td>
+      </tr>
+      <% } %>
+    </table>
+  <% } else { %>
+    <p>Belum ada pemesanan</p>
+  <% } %>
+</article>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/pemesanan/list.js"></script>
+</main>
+</body>
+
+</html>

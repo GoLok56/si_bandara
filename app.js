@@ -23,20 +23,21 @@ app.use(session({
   secret: 'SI_BANDARA_JOS'
 }))
 
-// app.use((req, res, next) => {
-//   if (req.session.hasLogin && req.originalUrl === '/login') {
-//     res.redirect('/')
-//   } else if (req.originalUrl !== '/login' && !req.session.hasLogin) {
-//     res.redirect('/login')
-//   }
+app.use((req, res, next) => {
+  if (req.session.hasLogin && req.originalUrl === '/login') {
+    res.redirect('/')
+  } else if (req.originalUrl !== '/login' && !req.session.hasLogin) {
+    res.redirect('/login')
+  }
 
-//   next()
-// })
+  next()
+})
 
 app.use('/', require('./routes/index'))
 app.use('/petugas', require('./routes/petugas'))
 app.use('/maskapai', require('./routes/maskapai'))
 app.use('/bandara', require('./routes/bandara'))
+app.use('/pemesanan', require('./routes/pemesanan'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

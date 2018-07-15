@@ -6,24 +6,27 @@ const Jadwal = require('./jadwal')
 const Petugas = require('./petugas')
 
 const Pemesanan = database.define('pemesanan', {
-  id_Pemesanan: {
+  id_pemesanan: {
     type: Sequelize.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true
+  },
+  nama_pemesan: {
+    type: Sequelize.STRING(30),
+    allowNull: false
   },
   no_telepon: {
     type: Sequelize.STRING(13),
     allowNull: false
   },
   tanggal_keberangkatan: {
-    type: Sequelize.DATE,
+    type: Sequelize.DATEONLY,
     allowNull: false
   },
   tanggal_pemesanan: {
-    type: Sequelize.DATE,
-    allowNull: false,
-    defaultValue: Sequelize.NOW
+    type: Sequelize.DATEONLY,
+    allowNull: false
   },
   jumlah_tiket: {
     type: Sequelize.INTEGER,
@@ -47,7 +50,8 @@ Pemesanan.hasMany(NamaPenumpang, {
   foreignKey: {
     name: 'id_pemesanan',
     allowNull: false
-  }
+  },
+  as: 'nama_penumpang'
 })
 
 Pemesanan.belongsTo(Petugas, {
