@@ -26,14 +26,55 @@ const Jadwal = database.define('jadwal', {
   harga: {
     type: Sequelize.INTEGER,
     allowNull: false
+  },
+  kelas: {
+    type: Sequelize.ENUM('Ekonomi', 'Bisnis', 'First Class'),
+    allowNull: false
   }
 }, {
   timestamps: false,
   tableName: 'jadwal'
 });
 
-Bandara.belongsToMany(Maskapai, { through: Jadwal, foreignKey: 'kode_bandara_asal' })
-Bandara.belongsToMany(Maskapai, { through: Jadwal, foreignKey: 'kode_bandara_tujuan' })
-Maskapai.belongsToMany(Bandara, { through: Jadwal, foreignKey: 'kode_maskapai' })
+Bandara.belongsToMany(Maskapai, { 
+  through: {
+    model: Jadwal,
+    unique: false 
+  }, 
+  foreignKey: 'kode_bandara_asal', 
+  as: 'bandara_asal'
+})
+
+Bandara.belongsToMany(Maskapai, { 
+  through: {
+    model: Jadwal,
+    unique: false 
+  }, 
+  foreignKey: 'kode_bandara_tujuan', 
+  as: 'bandara_tujuan'
+})
+
+Maskapai.belongsToMany(Bandara, { 
+  through: {
+    model: Jadwal,
+    unique: false 
+  },
+  foreignKey: 'kode_maskapai', 
+  as: 'maskapai',
+})
+
+Jadwal.belongsTo(Bandara, {
+  foreignKey: 'kode_bandara_asal',
+  as: 'bandara_asal'
+})
+
+Jadwal.belongsTo(Bandara, {
+  foreignKey: 'kode_bandara_tujuan',
+  as: 'bandara_tujuan'
+})
+
+Jadwal.belongsTo(Maskapai, {
+  foreignKey: 'kode_maskapai'
+})
 
 module.exports = Jadwal;

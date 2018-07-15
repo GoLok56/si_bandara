@@ -1,0 +1,80 @@
+<% include ../templates/header %>
+
+<article style="padding:24px;">
+  <form>
+    <div class="form-group">
+      <label for="maskapai">Nama Maskapai</label>
+      <select name="maskapai" id="maskapai">
+        <% for (let maskapai of maskapaies) { %>
+          <option value="<%= maskapai.kode_maskapai %>">
+            <%= maskapai.nama_maskapai %>
+          </option>
+          <% } %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="bandara_asal">Bandara Asal</label>
+      <select name="bandara_asal" id="bandara_asal">
+        <% for (let bandara of bandaras) { %>
+          <option value="<%= bandara.kode_bandara %>">
+            <%= bandara.kota + ' - ' + bandara.nama_bandara %>
+          </option>
+          <% } %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="bandara_tujuan">Bandara Tujuan</label>
+      <select name="bandara_tujuan" id="bandara_tujuan">
+        <% for (let bandara of bandaras) { %>
+          <option value="<%= bandara.kode_bandara %>">
+            <%= bandara.kota + ' - ' + bandara.nama_bandara %>
+          </option>
+          <% } %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="kelas">Kelas</label>
+      <select name="kelas" id="kelas">
+        <option value="Ekonomi">Ekonomi</option>
+        <option value="Bisnis">Bisnis</option>
+        <option value="First Class">First Class</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="kode">Kode</label>
+      <input type="text" name="kode" id="kode" placeholder="LAR12" maxlength="8">
+    </div>
+
+    <div class="form-group">
+      <label for="jam_berangkat">Jam Berangkat</label>
+      <input type="time" name="jam_berangkat" id="jam_berangkat" placeholder="Lion Air">
+    </div>
+
+    <div class="form-group">
+      <label for="jam_sampai">Jam Sampai</label>
+      <input type="time" name="jam_sampai" id="jam_sampai" placeholder="Lion Air">
+    </div>
+
+    <div class="form-group">
+      <label for="harga">Harga</label>
+      <input type="text" name="harga" id="harga" placeholder="500000">
+    </div>
+
+    <div class="form-group">
+      <button class="btn accent-color" id="simpan">Simpan</button>
+    </div>
+  </form>
+</article>
+</section>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/jadwal/tambah.js"></script>
+</main>
+</body>
+
+</html>

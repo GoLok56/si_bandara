@@ -1,0 +1,44 @@
+<% include ../templates/header %>
+
+<style>
+  .data tr th, .data tr td {
+    display: flex;
+    flex-basis: 130px;
+    min-width: 130px;
+  }
+</style>
+
+<article>
+  <div class="form-group">
+    <label for="maskapai">Nama Maskapai</label>
+    <select name="maskapai" id="maskapai">
+      <% for (let maskapai of maskapaies) { %>
+        <option value="<%= maskapai.kode_maskapai %>">
+          <%= maskapai.nama_maskapai %>
+        </option>
+        <% } %>
+    </select>
+  </div>
+
+  <table class="data" style="margin-top: 16px">
+    <tr class="data-header">
+      <th>Asal</th>
+      <th>Tujuan</th>
+      <th>Kelas</th>
+      <th>Jam Berangkat</th>
+      <th>Jam Tiba</th>
+      <th>Harga</th>
+      <th>Aksi</th>
+    </tr>
+  </table>
+
+  <p id="not-found" style="margin-top: 16px">Belum ada jadwal untuk maskapai ini</p>
+</article>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/jadwal/list.js"></script>
+</main>
+</body>
+
+</html>
