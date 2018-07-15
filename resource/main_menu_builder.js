@@ -5,6 +5,6 @@ module.exports = (userLevel) => {
     case 'Pemesanan':
       return require('./main_menu/pemesanan_menu')
     default:
-      return require('./main_menu/pemesanan_menu')
+      return require('./main_menu/check_in_menu')
   }
 }

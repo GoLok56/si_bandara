@@ -216,7 +216,13 @@ module.exports = {
       pemesanan = await Pemesanan.findOne({
         where: {
           id_pemesanan: req.params.id
-        }
+        },
+        include: [
+          { 
+            model: NamaPenumpang,
+            as: 'nama_penumpang'
+          }
+        ]
       })
     } catch (err) {
       console.log(err)

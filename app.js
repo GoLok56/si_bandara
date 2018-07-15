@@ -38,6 +38,7 @@ app.use('/petugas', require('./routes/petugas'))
 app.use('/maskapai', require('./routes/maskapai'))
 app.use('/bandara', require('./routes/bandara'))
 app.use('/pemesanan', require('./routes/pemesanan'))
+app.use('/checkin', require('./routes/checkin'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

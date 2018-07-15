@@ -2,6 +2,8 @@ const Sequelize = require('sequelize');
 
 const database = require('../services/database');
 
+const Pemesanan = require('./pemesanan')
+
 const BoardingPass = database.define('boarding_pass', {
   id_boarding_pass: {
     type: Sequelize.INTEGER,
