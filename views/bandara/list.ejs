@@ -1,0 +1,32 @@
+<% include ../templates/header %>
+
+<article>
+  <table class="data">
+    <tr class="data-header">
+      <th>Kode Bandara</th>
+      <th>Kota</th>
+      <th>Nama Bandara</th>
+      <th>Aksi</th>
+    </tr>
+
+    <% for (let bandara of bandaras) { %>
+    <tr class="data-body">
+      <td><%= bandara.kode_bandara %></td>
+      <td><%= bandara.kota %></td>
+      <td><%= bandara.nama_bandara %></td>
+      <td id="<%= bandara.kode_bandara %>">
+        <a href="/bandara/ubah/<%= bandara.kode_bandara %>" class="btn btn-data accent-color">Ubah</a>
+        <button class="btn btn-data accent-color delete">Hapus</button>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+</article>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/bandara/list.js"></script>
+</main>
+</body>
+
+</html>

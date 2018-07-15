@@ -1,0 +1,42 @@
+<% include ../templates/header %>
+
+<article style="padding:24px;">
+  <form>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="johndoe56">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="********">
+    </div>
+
+    <div class="form-group">
+      <label for="nama">Nama</label>
+      <input type="text" name="nama" id="nama" placeholder="John Doe">
+    </div>
+
+    <div class="form-group">
+      <label for="jenis_petugas">Jenis Petugas</label>
+      <select name="jenis_petugas" id="jenis_petugas">
+        <option value="Admin">Admin</option>
+        <option value="Pemesanan">Pemesanan</option>
+        <option value="Check In">Check In</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button class="btn accent-color" id="simpan">Simpan</button>
+    </div>
+  </form>
+</article>
+</section>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/petugas/registrasi.js"></script>
+</main>
+</body>
+
+</html>

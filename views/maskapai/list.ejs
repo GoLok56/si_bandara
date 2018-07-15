@@ -1,0 +1,30 @@
+<% include ../templates/header %>
+
+<article>
+  <table class="data">
+    <tr class="data-header">
+      <th>Kode Maskapai</th>
+      <th>Nama Maskapai</th>
+      <th>Aksi</th>
+    </tr>
+
+    <% for (let maskapai of maskapaies) { %>
+    <tr class="data-body">
+      <td><%= maskapai.kode_maskapai %></td>
+      <td><%= maskapai.nama_maskapai %></td>
+      <td id="<%= maskapai.kode_maskapai %>">
+        <a href="/maskapai/ubah/<%= maskapai.kode_maskapai %>" class="btn btn-data accent-color">Ubah</a>
+        <button class="btn btn-data accent-color delete">Hapus</button>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+</article>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/maskapai/list.js"></script>
+</main>
+</body>
+
+</html>

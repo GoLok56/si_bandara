@@ -1,0 +1,308 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+article {
+  padding: 24px;
+}
+
+button {
+  background-color: transparent;
+}
+
+fieldset {
+  border-radius: 8px;
+  padding: 40px;
+}
+
+header {
+  width: 100%;
+}
+
+input[type=text], 
+input[type=password],
+input[type=date],
+input[type=time],
+select {
+  background-color: white;
+  border: 1px solid #00000080;
+  border-radius: 4px;
+  padding: 12px 20px;
+}
+
+input[type=radio]:not(:first-of-type) {
+  margin-left: 8px;
+}
+
+input[type=radio]:checked:after {
+  background-color: #0097e6;
+}
+
+small {
+  font-size: 10px;
+}
+
+/* Positioning */
+
+.flex {
+  display: flex;
+}
+
+.fg-1 {
+  flex-grow: 1;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center-vertical {
+  align-items: center;
+}
+
+.center-horizontal {
+  justify-content: center;
+}
+
+.spread {
+  justify-content: space-evenly;
+}
+
+.form-group:not(:first-of-type) {
+  margin-top: 16px;
+}
+
+.form-group * {
+  display: inline-block;
+}
+
+.form-group label {
+  min-width: 120px;
+}
+
+.form-group input:not([type=submit]):not([type=radio]),
+.form-group select {
+  min-width: 200px;
+  max-width: 200px;
+}
+
+.form-group small {
+  color: #F44336;
+  display: block;
+  margin-top: 4px;
+}
+
+.check-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.check-group input:not(:first-of-type) {
+  margin-left: 16px;
+}
+
+.check-group p {
+  margin-left: 8px;
+}
+
+.detail-group {
+  display: flex;
+}
+
+.detail-group:not(:first-of-type) {
+  margin-top: 16px;
+}
+
+.detail-group p:first-of-type {
+  font-weight: bold;
+  min-width: 185px;
+}
+
+/* Color */
+
+.accent-color {
+  background: #FF5252;
+  color: white;
+}
+
+.accent-color * {
+  color: white;
+}
+
+.accent-color:hover {
+  background: #FF5252DE;
+}
+
+.primary-color {
+  background: white;
+  border-color: #888888;
+  color: #888888;
+}
+
+.primary-color * {
+  color: #888888;
+}
+
+.primary-color a:hover {
+  background: #0097e6;
+  border-color: #00a8ff;
+  color: white;
+}
+
+.primary-color a.active {
+  background: #0097e6;
+  border-color: #00a8ff;
+  color: white;
+}
+
+.primary-orange-color {
+  background: #0097e6;
+  border-color: #00a8ff;
+  color: white;
+}
+
+.primary-orange-color * {
+  color: white;
+}
+
+.error-color {
+  border: 1px solid #D32F2F !important;
+}
+
+.error-color::placeholder {
+  color: #F44336 !important;
+}
+
+.success {
+  margin-top: 8px;
+  color: #4cd137;
+}
+
+/* Components */
+
+.btn {
+  border-width: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.btn-small {
+  border: 0 4px 4px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.btn-small:active {
+  border: 4px 0 0 4px;
+}
+
+.nav-bar {
+  box-shadow: 1px 2px #88888880;
+  padding: 20px 0;
+}
+
+.nav-menu {
+  display: inline;
+}
+
+.nav-menu a {
+  padding: 21px;
+}
+
+.side-bar {
+  box-shadow: 2px 1px #88888880;
+  height: 100%;
+}
+
+.side-bar-title {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.side-bar * {
+  color: white;
+}
+
+.side-bar-title {
+  margin: 16px 20px 32px 20px;
+}
+
+.side-bar-menu {
+  border: 1px solid #ffffff80;
+  padding: 16px;
+  text-align: center;
+}
+
+.card {
+  background: white;
+  border: 1px solid #88888880;
+  border-radius: 4px;
+  box-shadow: 2px 2px #88888880;
+  color: #888888;
+  min-width: 120px;
+  padding: 16px;
+}
+
+.card * {
+  color: #888888;
+}
+
+.card-title {
+  border-bottom: 1px solid #88888880;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.card-list:not(:last-of-type) {
+  margin-bottom: 4px;
+}
+
+.card-list a {
+  text-decoration: underline;
+}
+
+.card-list a:hover {
+  color: #000000;
+}
+
+.data tr {
+  display: flex;
+  padding: 8px;
+}
+
+.data tr:first-child {
+  background-color: #0097e6;
+}
+
+.data tr th {
+  color: white
+}
+
+.data tr th,
+.data tr td {
+  display: flex;
+  flex-basis: 200px;
+  min-width: 200px;
+}
+
+.data-body:last-of-type {
+  margin-bottom: 16px;
+}
+
+.btn-data {
+  background: #FF5252;
+}
+
+.btn-data:not(:first-child) {
+  margin-left: 8px;
+}
+
+/* Visibility */
+
+.hide {
+  display: none !important;
+}

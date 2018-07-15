@@ -1,0 +1,32 @@
+<% include ../templates/header %>
+
+<article>
+  <table class="data">
+    <tr class="data-header">
+      <th>Username</th>
+      <th>Nama Petugas</th>
+      <th>Jenis Petugas</lthi>
+      <th>Aksi</th>
+    </tr>
+
+    <% for (let petugas of petugases) { %>
+    <tr class="data-body">
+      <td><%= petugas.username %></td>
+      <td><%= petugas.nama_petugas %></td>
+      <td><%= petugas.jenis_petugas %></td>
+      <td id="<%= petugas.id_petugas %>">
+        <a href="/petugas/ubah/<%= petugas.id_petugas %>" class="btn btn-data accent-color">Ubah</a>
+        <button class="btn btn-data accent-color delete">Hapus</button>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+</article>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/petugas/list.js"></script>
+</main>
+</body>
+
+</html>

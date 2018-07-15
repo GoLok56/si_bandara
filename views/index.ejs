@@ -1,0 +1,20 @@
+<% include templates/header %>
+
+<article class="flex center-vertical spread" style="height: 100%">
+  <% for (let card of mainMenus) { %>
+    <section class="card">
+      <p class="card-title"><%= card.judul %></p>
+      <ul>
+        <% for (let menu of card.menus) { %>
+          <li class="card-list">
+            <a href="<%= menu.link %>"><%= menu.judul %></a>
+          </li>
+        <% } %>
+      </ul>
+    </section>
+  <% } %> 
+</article>
+</main>
+</body>
+
+</html>

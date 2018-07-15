@@ -1,0 +1,10 @@
+<sidebar class="side-bar primary-orange-color">
+  <h3 class="side-bar-title">Selamat Datang, <%= userName %></h3>
+  <ul>
+    <% for (let menu of sideMenus) { %>
+      <li class="side-bar-menu">
+        <a href="<%= menu.link %>"><%= menu.judul %></a>
+      </li>
+    <% } %>
+  </ul>
+</sidebar>

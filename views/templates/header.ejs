@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= title %>></title>
+
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+  <main class="flex">
+    <% if (sideMenus) { %>
+      <% include ./sidebar %>
+    <% } %>
+
+    <section class="column flex fg-1">
+      <header>
+        <nav class="nav-bar primary-color flex">
+          <ul class="flex">
+            <% for (let menu of menus) { %>
+            <li class="nav-menu">
+              <a href="<%= menu.link %>" class="<%= menu.judul === selectedMenu ? 'active' : '' %>">
+                <%= menu.judul %>
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </nav>
+      </header>
+    <section></section>
