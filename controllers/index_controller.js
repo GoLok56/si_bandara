@@ -1,5 +1,6 @@
 const menuBuilder = require('../resource/menu_builder')
 const mainMenuBuilder = require('../resource/main_menu_builder')
+const mainMenuTitle = require('../resource/main_menu_title')
 
 const Petugas = require('../models/petugas')
 
@@ -14,7 +15,8 @@ module.exports = {
       menus: menuBuilder(userLevel),
       mainMenus: mainMenuBuilder(userLevel),
       selectedMenu: 'Beranda',
-      sideMenus: null
+      sideMenus: null,
+      mainMenuTitle: mainMenuTitle(userLevel)
     })
   },
 
